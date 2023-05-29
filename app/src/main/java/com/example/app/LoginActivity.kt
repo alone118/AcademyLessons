@@ -24,21 +24,21 @@ class LoginActivity : AppCompatActivity() {
             val passwordText = binding.loginEditText.text.toString()
             when {
                 loginText.isEmpty() -> {
-                    showToast("Заполните поле ввода для логина")
+                    showToast(getString(R.string.fill_in_the_login_input_field))
                 }
                 !loginText.contains("@gmail.com") -> {
-                    showToast("Неправильный ввод логина")
+                    showToast(getString(R.string.wrong_login))
                 }
 
                 passwordText.isEmpty() -> {
-                    showToast("Заполните поле ввода для пароля")
+                    showToast(getString(R.string.fill_in_the_input_field_for_the_password))
                 }
 
                 passwordText.length <= 8 -> {
-                    showToast("Пароль должен содержать не менее 8 символов")
+                    showToast(getString(R.string.password_must_containt_at_least_8_characters))
                 }
                 else -> {
-                    showToast("Добро пожаловать")
+                    showToast(getString(R.string.welcome))
                     navigateToMusicListActivity()
 
                 }
